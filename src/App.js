@@ -1,13 +1,17 @@
-import bgImage from './assets/underconstruction.jpg';
+import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Welcome } from './components/Home'
+import { Wrapper } from './components/Wrapper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={bgImage} className="App-logo" alt="under construction" />
-      </header>
-    </div>
+<BrowserRouter>
+<Routes>
+  <Route path='/' element={<Welcome />}/>
+  <Route path='/channels/:id' element={<Wrapper />}/>
+</Routes>
+</BrowserRouter>
   );
 }
 
